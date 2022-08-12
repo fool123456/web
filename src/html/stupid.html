@@ -1,0 +1,169 @@
+<!-- <p1><strong>永远魔法师</strong></p1> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../old.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/font_icon/iconfont.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>老女人</title>
+</head>
+
+<body class="beijing">
+    <br>
+    <strong>代码杂乱无章请见谅</strong>
+    <hr>
+    <h1>1级标题</h1>
+    <h2>2级标题</h2>
+    <h3>3级标题</h3>
+    <h4>4级标题</h4>
+    <h5>5级标题</h5>
+    <h6>6级标题</h6>
+    <p>第一段</p>
+    <p>第二段<br>第二段的一部分文字换行</p>
+    <strong>强调加粗</strong>
+    <ins>强调下划线</ins>
+    <em>强调倾斜</em>
+    <del>强调删除线</del>
+    <hr>
+    <b>加粗</b>
+    <u>下划线</u>
+    <i>倾斜</i>
+    <s>删除线</s>
+    <!-- alt:替换文本,当图片不显示的时候显示的文字 -->
+    <!-- width和height只需要给出一个值，另一个值等比例缩放，好处就是图片不变形 -->
+    <img src="../images/宝塔1.png" alt="当图片加载失败时,才显示alt文本。当图片加载成功时,不会显示alt文本" title="当鼠标悬停时,才显示的提示文本" width="200" height="300">
+    <img src="../images/postman用法2.png">
+    <img src="../images/无标题.png">
+    <audio src="../music/10.向こう側の月.mp3" controls loop></audio>
+    <!-- 谷歌浏览器可以让视频自动播放，但必须是静音状态muted -->
+    <video src="../music/后台系统测试用例(扩展).mp4" controls autoplay muted loop></video>
+    <a href="./超链接的目标网页.html" target="_blank">超链接</a>
+    <!-- 当开发网站初期，我们还不知道跳转地址的时候，href的值书写#(空链接) -->
+    <a href="#">空链接</a>
+    <ul>
+        <li>无序列表1</li>
+        <li>无序列表2</li>
+    </ul>
+    <ol>
+        <li>有序列表1</li>
+        <li>有序列表2</li>
+    </ol>
+    <dl>
+        <dt>自定义列表的主题</dt>
+        <dd>自定义列表的针对主题的每一项内容</dd>
+        <dd>自定义列表的针对主题的每一项内容</dd>
+    </dl>
+    <table border="3" width="200" height="300">
+        <caption>表格整体大标题</caption>
+        <thead>
+            <tr>
+                <!-- 第1行 -->
+                <th colspan="3">标题第1列</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- 第2行 -->
+                <td rowspan="2">第1列</td>
+                <td rowspan="2">第2列</td>
+                <td>第3列</td>
+            </tr>
+
+            <tr>
+                <!-- 第3行 -->
+                <td>第3列</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- 第4行 -->
+                <td>第1列</td>
+                <td>第2列</td>
+                <td>第3列</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <form action="">
+        文本框<input type="text" placeholder="提示信息">
+        密码<input type="password">
+        性别:<input type="radio" name="gender">男
+        <input type="radio" name="gender" checked>女
+        复选框<input type="checkbox" checked>穷
+        <input type="checkbox" checked>傻
+        <input type="checkbox">丑
+        上传文件<input type="file" multiple>
+        <!-- 按钮 -->
+        <input type="submit">
+        <input type="reset">
+        普通按钮<input type="button" value="给按钮添加文字">
+    </form>
+    <br>
+    <button type="submit">提交按钮</button>
+    <button type="reset">重置按钮</button>
+    <button>按钮提示文字</button>
+    收入 <select>
+        <option selected>0-999</option>
+        <option>1000-2999</option>
+        <option>3000-5999</option>
+    </select>
+    文本域<textarea cols="5" rows="5">
+        </textarea>
+    <br>
+    方向<input type="radio" name="road" id="up">
+    <label for="up">
+        <img src="./images/up.png">
+    </label>
+    <label>
+        <input type="radio" name="road">
+        <img src="./images/down.png">
+    </label>
+    <!-- 网页不认识多个空格，只认识一个 -->
+    显示&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;多个空格
+    <div style="color: deeppink;">行内式:css写在标签的style属性中,选择器控制指定标签</div>
+    <p>标签选择器</p>
+    <p class="blue font">类选择器:通过类名,找到页面中所有带有这个类名的标签,设置样式。给标签加上class属性。一个标签可以同时有多个类名,类名之间以空格隔开
+        类名可以重复,一个类选择器可以同时选中多个标签</p>
+    <p id="id">id选择器:给标签加上id属性, (唯一性)通过id属性值,找到页面中带有这个id属性值的标签,设置样式。id属性类似于身份证号码,在1个页面中是唯一的,不可重复的
+        1个标签上只能有1个id属性值，1个id选择器只能选中1个标签。配合js使用</p>
+    <p id="font1">复合属性字体样式</p>
+    <h1 class="text">文本样式：首行缩进，文本水平对齐方式</h1>
+    <a href="./让网页水平居中对齐.html" style="text-decoration: none;">清除超链接默认的下划线</a>
+    <div style="text-decoration: underline;">文本修饰:下划线</div>
+    <p style="text-decoration: line-through;">删除线</p>
+    <p style="text-decoration: overline;">上划线</p>
+    <p class="hang_gao">行高 控制一行的上下行间距
+        line-height: 数字+px、倍数(当前标签font-size的倍数)
+        如果同时设置了行高和font连写,注意覆盖问题 font: style weight size/line-height family
+        应用:
+        让单行文本垂直居中可以设置line-height: 文字父元素高度
+        网页精准布局时,会设置line-height: 可以取消上下间距</p>
+    <p>一个p标签</p>
+    <div>
+        <span>子代选择器:只能作用于儿子,这是div的儿子span,div是父标签<p>后代选择器:这是div的孙子p,div p</p></span>
+        <h1>(相邻兄弟选择器)并集选择器</h1>
+        <h2>同时选择多组标签,设置相同的样式</h2>
+        <h3>并集选择器中的每组选择器可以是基础选择器或者复合选择器</h3>
+    </div>
+    <p class="jiaoji">(既又原则)找到页面中既能被选择器1选中,又能被选择器2选中的标签,设置样式。交集选择器中的选择器之间是紧挨着的,没有东西分隔。交集选择器中如果有标签选择器,标签选择器必须写在最前面</p>
+    <div class="weilei">hover伪类选择器:当鼠标悬停在网页元素(标签)上,样式发生变化。可以设置鼠标悬停在标签上的样式
+    </div>
+    <p style="background-color:peru;">块级元素,div、p、h系列、ul、li、dl、dd、form、header、nav、footer...
+        特点:独占一行(一行只能显示一个)
+        宽度默认是父元素的宽度,高度默认是由内容撑开
+        可以设置宽高</p>
+    <span style="background-color:thistle;">行内元素a、span、b、u、i、s、strong、ins、em、del...</span><span
+        style="background-color:teal;">特点:一行可以显示多个,宽度和高度默认由内容撑开,不可以设置宽高</span>
+    <span style="display:block; background-color: blueviolet;">行内块、行内转换成块级元素</span>
+    <div style="display:inline; background-color: darkorange;">块级、行内转换成行内块元素</div>
+    <div style="color:springgreen; font:italic 700 40px 宋体;">这是div标签里面的文字<span>这是div里面的span,继承div中文字的样式</span></div>
+    <div class="box">盒子里面的内容1</div>
+    <div class="box">盒子里面的内容2</div>
+    <span class="iconfont icon-search"></span>
+</body>
+
+</html>

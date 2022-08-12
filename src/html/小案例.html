@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/font_icon/iconfont.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        .wrapper{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .study li,
+        .study li a img{
+            width: 300px;
+            height: 241px;
+        }
+        .study li {
+            position: relative;
+            float: left;
+            margin-left: 20px;
+            overflow: hidden;
+        }
+        .study li a::after{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 300px;
+            height: 241px;
+            background-image:linear-gradient(transparent,rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: all 2s;
+        }
+        .study li a img{
+            transition: all 5s;
+        }
+        .study li:hover a img{
+            transform: scale(1.5);
+        }
+        .study li:hover a::after{
+            opacity: 1;
+        }
+        .study li a h5,
+        .study li a span,
+        .study li a .icon-arrow-right{
+            position: absolute;
+            left: 0;
+            bottom:0;
+            z-index: 1;
+            font-size:22px;
+            color: white;
+            opacity: 0;
+            transition: all 2s;/* 谁变化给谁加过渡属性 */
+        }
+        .study li:hover a h5,
+        .study li:hover a span,
+        .study li:hover a .icon-arrow-right{
+            opacity: 1;
+            transform: translateY(-50px);
+        }
+        .study li a span{
+            bottom:-26px;
+            font-size:16px;
+        }
+        .study li a .icon-arrow-right{
+            left:64px;
+            bottom:-30px;
+            font-size: 20px;
+            color: red;
+        }
+        .explain{
+            text-align: center;
+        }
+        .cube{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform: rotate3d(1, 1, 0, -30deg);
+            transform-style: preserve-3d;
+            /* perspective: 1000px; */
+            transition: all 5s;
+        }
+        .cube span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+        }
+        .cube span:nth-child(1){
+            background: red;
+        }
+        .cube span:nth-child(2){
+            background: orange;
+            transform:translate3d(0,50px,-50px) rotateX(90deg);
+        }
+        .cube span:nth-child(3){
+            background: yellow;
+            transform:translateZ(-100px);
+        }
+        .cube span:nth-child(4){
+            background-color: greenyellow;
+            transform: translate3d(0,-50px,-50px) rotateX(90deg);
+        }
+        .cube span:nth-child(5){
+            background-color: skyblue;
+            transform: translate3d(50px,0,-50px) rotateY(90deg);
+        }
+        .cube span:nth-child(6){
+            background-color: violet;
+            transform: translate3d(-50px,0,-50px) rotateY(90deg);
+        }
+        .cube:hover{
+            transform:rotateX(45deg) rotateZ(45deg) rotateY(360deg);
+        }
+        .nav ul li{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 50px;
+            /* transform: rotate3d(1, 1, 0, -30deg);检查子元素空间转换的位置是否正确 */
+            transform-style: preserve-3d;
+            transition: all 0.5s;
+        }
+        .nav ul li a{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 50px;
+            background-color:pink;
+            font-size: 32px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+        }
+        .nav ul li a:nth-child(1){
+            transform: translateZ(25px);
+        }
+        .nav ul li a:nth-child(2){
+            transform: translateY(-25px) rotateX(90deg);
+            background-color: greenyellow;
+        }
+        .nav ul li:hover{
+            transform:rotateX(-90deg);
+        }
+        .clock{
+            position: relative;
+            width: 153px;
+            height: 150px;
+            margin-left: 20px;
+            background-image: url(../images/clock.png);
+            background-size: cover;
+        }
+        .clock span{
+            position: absolute;
+            top:5px;
+            left: 76px;
+            width: 1px;
+            height: 70px;
+            background-color:red;
+            transform-origin: bottom;
+            animation: rotate 60s linear infinite;
+        }
+        .clock:nth-child(2) span{
+            animation: rotate 60s steps(60) infinite;
+        }
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .clock::after{
+            position: absolute;
+            left: 0;
+            top: 149px;
+            width:153px;
+            height: 100px;
+            overflow:auto;
+        }
+        .clock:nth-child(1)::after{
+            content: '补间动画:补间动画指的是做FLASH动画时，在两个关键帧中间需要做“补间动画”，才能实现图画的运动；插入补间动画后两个关键帧之间的插补帧是由计算机自动运算而得到的。animation: rotate 60s linear infinite;';           
+        }
+        .clock:nth-child(2)::after{
+            content: '逐帧动画:animation: rotate 60s steps(60) infinite;';
+        }
+        .people{
+            width: 63px; /* 保证显示区域尺寸和1个精灵小图尺寸相同 */
+            height: 93px;
+            background-image: url(../images/people.png);
+            /* 精灵图上小图个数 多组动画*/
+            animation: people 0.8s steps(4) infinite,walk 2s forwards;
+        }
+        @keyframes people {
+            /* from{
+                background-position: 0 0;
+            }   动画的开始状态和盒子的默认样式是相同的,可以省略开始状态的代码*/
+            to{
+                background-position: -279px 0;
+                /* 水平移动距离为精灵图的宽度 */
+            }
+        }
+        @keyframes walk {
+            /* from{
+                transform: translateX(0);
+            } */
+            to{
+                transform: translateX(200px);
+            }
+        }
+        .people:hover{
+            animation-play-state:paused;
+        }
+        /* 小案例 走马灯 无缝动画 */
+        .walking-lantern{
+            width: 200px;
+            height: 36px;
+            border: 3px solid #000;
+            overflow: hidden;
+        }
+        .walking-lantern ul li img{
+            float: left;
+            width: 100px;
+        }
+        .walking-lantern ul{
+            width: 600px;
+            animation: move 3s infinite linear;
+        }
+        @keyframes move {
+            to{
+                transform: translateX(-400px);
+            }
+        }
+        .walking-lantern:hover ul{ /* 用户鼠标移入走马灯，让走马灯暂停。 */
+            animation-play-state:paused;
+        }
+    </style>
+    <title>学历歧视新闻</title>
+</head>
+<body>
+    <div class="study wrapper clearfix">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="../images/学历歧视a.jpg" alt="">
+                    <h5>专科就是人生污点。就像一个人犯罪了，留了案底，无论做再多好事，都无法覆盖他以前犯罪的事实</h5>
+                    <span>了解更多</span>
+                    <i class="iconfont icon-arrow-right"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../images/学历歧视a.jpg" alt="">
+                    <h5>专科就是人生污点。就像一个人犯罪了，留了案底，无论做再多好事，都无法覆盖他以前犯罪的事实</h5>
+                    <span>了解更多</span>
+                    <i class="iconfont icon-arrow-right"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p class="explain wrapper">过渡效果:1.图片放大2.显示半透明黑渐变3.显示字体并向上位移</p>
+    <div class="cube wrapper ">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+    <!-- 立体导航 -->
+    <div class="nav wrapper">
+        <ul>
+            <li>
+                <a href="#">首页</a>
+                <a href="#">index</a>
+            </li>
+            <li>
+                <a href="#">登录</a>
+                <a href="#">login</a>
+            </li>
+        </ul>
+    </div>
+    <div class="animation clearfix">
+        <div class="clock fl">
+            <span></span>                        
+        </div>
+        <div class="clock fl">
+            <span></span>            
+        </div>       
+    </div>
+    <div class="people"> </div>
+    <br>
+    <div class="walking-lantern wrapper">
+        <ul>
+            <li><img src="../images/hat1.png" alt=""></li>
+            <li><img src="../images/hat2.png" alt=""></li>
+            <li><img src="../images/hat3.png" alt=""></li>
+            <li><img src="../images/hat4.png" alt=""></li>
+            <!-- 第3、4移动时,显示区域不能留白 -->
+            <li><img src="../images/hat1.png" alt=""></li>
+            <li><img src="../images/hat2.png" alt=""></li>
+        </ul>
+    </div>
+    <p  class="explain wrapper">小案例:走马灯,适用于轮播图无限循环(无缝动画)</p>
+</body>
+</html>

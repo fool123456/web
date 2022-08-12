@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        .animation{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            animation:change 1s; /*使用动画 */
+        }
+        /* 1s内宽度从100变大到400,背景色由粉色变为绿色 */
+        @keyframes change {
+            from{
+                width:100px;
+                background-color: pink;
+            }
+            to{
+                width: 400px;
+                background-color:greenyellow;
+            }
+        }
+        .change{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation:changes 2s;
+            
+        }
+        @keyframes changes {
+            /* 1s内宽度从100变大到400再到500,背景色由红变黄变绿 */
+            0%{
+                width: 100px;
+                background-color: red;
+            }
+            50%{
+                width: 400px;
+                background-color:yellow;
+            }
+            100%{
+                width: 500px;
+                background-color:greenyellow;
+            }
+        }
+        .flex{
+            display: flex;
+            /* justify-content: center;   */
+            /* align-items: center;   */
+            width: 200px;
+            height:200px;
+            border: 1px solid black;
+        }
+        .flex span{
+            display: block;
+            /* width: 50px; */
+            height: 50px;
+            background-color: pink;
+        }
+        /* .flex span:nth-child(2){
+            align-self: center;
+        } */
+    </style>
+</head>
+<body>
+    <div class="animation">2个状态(相同css属性名)之间值的变化,变化1次</div>
+    <div class="change">多个状态(相同css属性名)之间值的变化,变化多次</div>
+    <div class="flex">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        
+    </div>
+</body>
+</html>

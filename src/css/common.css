@@ -1,0 +1,239 @@
+/* 各个页面相同的样式表,头、尾部 */
+/* 版心 */
+.wrapper{
+    width: 1240px;
+    margin: 0 auto;
+}
+/*快捷导航*/
+.shortcut{
+    width: 1707px;
+    height: 52px;
+    /* 宽度不加,和浏览器一样大 */
+    background-color: #333;
+}
+.shortcut .wrapper{
+    height: 52px;
+}
+.shortcut .wrapper li{
+    float: left;
+    line-height: 52px;
+}
+.shortcut .wrapper li a{
+    padding:0 16px;
+    border-right:1px solid #666;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+.shortcut .wrapper li:last-child a{
+    border-right:0;
+}
+.shortcut .wrapper li a span{
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background-image: url(../images/rabbit/images/sprites.png);
+    background-position: -160px -70px;
+    vertical-align: -2px;/* 图片和文字向下对齐 */
+    margin-right: 8px;
+}
+.header{
+    display: flex;
+    margin: 30px auto;
+    height: 70px;  
+    background-color: #fff;
+}
+/* logo搜索引擎优化:div>h1>a    a标签里放搜索关键字并设置logo背景图 */
+.header .logo h1{
+    width: 207px;
+    height: 70px;
+}
+.header .logo h1 a{
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/rabbit/images/logo.png);
+    background-size: contain;/* 目的让h1里面的字看不见,标签语义异化*/
+    font-size: 0;
+}
+.header .nav{
+    margin-left: 40px;
+    height: 70px;
+}
+.header .nav ul{
+    display: flex;
+}
+.header .nav li{
+    margin-right: 48px;
+    line-height: 70px;
+}
+.header .nav li a{
+    padding-bottom: 7px;
+}
+.header .nav li a:hover{
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+.header .search{
+    position: relative;
+    margin-top: 24px;
+    margin-left: 34px;
+    width: 172px;
+    height: 30px;
+}
+.header .search input{
+    padding-left: 30px;
+    width: 172px;
+    height: 28px;
+    border-bottom: 2px solid #e7e7e7;
+}
+.header .search input::placeholder{
+    font-size: 14px;
+    color:#dcdcdc;
+}
+.header .search span{
+    position:absolute;
+    left: 2px;
+    top:1px;
+    width: 19px;
+    height: 19px;
+    background-image: url(../images/rabbit/images/sprites.png);
+    background-position: -79px -69px;
+}
+.header .car a{
+    display: inline-block;
+    position: relative;
+    margin-top: 28px;
+    margin-left: 15px;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/rabbit/images/sprites.png);
+    background-position: -119px -69px;
+}
+.header .car a span{
+    position:absolute;
+    left:15px;/* 定位不要用右,直接左定位,不然数字长了它会左移,不好看 */
+    top:-6px;
+    padding-left: 6px;/* 不要给它设宽,直接用padding撑开,用数字2是可以变的 */
+    padding-right: 6px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius:8px;
+    font:13px/15px "Microsoft Yahei";
+    text-align: center;
+    color: white;
+} 
+/* 客户服务 */
+.customer_service{
+    padding-top: 56px;
+    padding-bottom: 40px;
+    min-height: 286px;
+    background-color: #f6f6f6;
+    border-top: solid 2px #ededed;
+        
+}
+.customer_service .wrapper,
+.customer_service .wrapper dd{
+    display: flex;
+}
+.customer_service .wrapper dl,
+.customer_service .wrapper dd a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: solid 2px #ededed;
+    color: #999;
+}
+.customer_service .wrapper dl:last-child{
+    border-right:0;
+}
+.customer_service .wrapper dl{
+    flex: 1;
+}
+.customer_service .wrapper dt{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.customer_service .wrapper dd a{
+    margin-right: 13px;
+    width: 93px;
+	height: 93px;
+    border: solid 2px #ededed;
+	background-color: #ffffff;
+    font-size: 14px;
+}
+.customer_service .wrapper dd a::before{
+    content: '';
+    margin-bottom: 8px;
+    background-image: url(../images/rabbit/images/sprites.png);
+    width: 29px;
+    height: 29px;
+    background-position: -250px -70px;
+    opacity: 0.5;
+}
+.customer_service .wrapper dl:last-child dd{
+    display: block;
+    height: 93px;
+    text-align: center;
+}
+.customer_service .wrapper dd p:first-child{
+   font-size: 22px;
+   color: #666; 
+}
+/* 版权区域 */
+.footer{
+    height: 342px;
+    background-color: #333;
+}
+.footer .wrapper{
+    width: 1393px;
+}
+.footer .top{
+    padding-top: 60px;
+    padding-left: 135px;
+    height: 175px;
+    border-bottom: 3px solid #434343;
+}
+.footer .top li{
+    float: left;
+    width: 195px;
+    height: 58px;
+    margin-right: 300px;
+    }
+ .footer .top li:last-child{
+    margin-right: 0;
+    }
+/* 伪元素添加的标签 行内显示模式 */
+.footer .top li:before{
+    display: inline-block;
+    content: '';
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/rabbit/images/sprites.png);
+    vertical-align:middle;
+}
+.footer .top li:nth-child(2):before{
+    background-position: -65px 0;
+}
+.footer .top li:nth-child(3):before{
+    background-position: -130px 0;
+}
+/* 如果行内块和行内文字无法通过vertical-align或line-height对齐,使用定位 */
+.footer .top li span{
+    position: relative;
+    left: 19px;
+    top: 6px;
+    font-size: 28px;
+    color: #fff;
+}
+.footer .bottom{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.footer .bottom p a{
+    /* a标签不能继承父属性的字体样式 */
+    font-size: 14px;
+    color: #999;
+}

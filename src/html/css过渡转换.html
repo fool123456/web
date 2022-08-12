@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color:greenyellow;
+            transition: all 5s;
+        }
+        .translate:hover{
+            transform:translateY(100px);
+            transform:translate(-50px);
+        }
+        .horizontally{
+            position: relative;
+            width: 350px;
+            height: 400px;
+            background-color:rgb(0, 255, 128);
+        }
+        .horizontally span{
+            position: absolute;
+            left: 50%;
+            top: 50%; 
+            /* 正方向移动定位父级高度、宽度的一半。 */
+            width: 250px;
+            height: 300px;
+            transform:translate(-50%,-50%);
+            /* 反方向位移父级宽度和高度的一半 */
+            background-color: yellow;
+        }
+        .doubledoor{
+            /* margin: 0 auto;网页居中 */
+            width: 300px;
+            height: 114px;
+            overflow: hidden;
+        }
+        .doubledoor::before,
+        .doubledoor::after{
+            float: left;
+            content: "";
+            width: 50%;
+            height: 114px;
+            background-image: url(../images/hat1.png);
+            transition: all 3s;
+        }
+        .doubledoor::after{
+            background-position: right 0;
+        }
+        .doubledoor:hover::before{
+            transform: translate(-100%);
+        }
+        .doubledoor:hover::after{
+            transform: translate(100%);
+        }
+        img{
+            transition: all 3s;
+        }
+        img:hover,
+        .orign:hover{
+            transform: rotate(360deg);
+        }
+        .orign{
+            background-color:yellow;
+            /* 改变转换原点在标签本身上写,不要在hover上写 */
+            transform-origin: right top;
+        }
+        .compound{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .compound:hover{
+            transform: translate(300px) scale(1.5) rotate(360deg);
+        }
+        .gradient{
+            background-color:yellow;
+        }
+        .gradient:hover{
+            background-image: linear-gradient(transparent,rgba(0,0,0,0.6));
+        }
+        .gradient span{
+            display: inline-block;
+            transition: all 5s;
+        }
+        .gradient:hover span{
+            color: white;
+            font-weight: 700;
+            transform: translateY(100px);
+        }
+        .scale{
+            background-color:pink;
+        }
+        .scale:hover{
+            transform: scale(0.5);
+        }
+        .perspective{
+            width: 1000px;
+            margin: 0 auto;
+            perspective: 1000px;    /* 视距1000px */
+        }
+        .translateZ{
+            width: 100px;
+            height: 100px;
+            background-image: url(../images/播放按钮.png);
+            background-size: contain;
+            transition: all 5s;
+        }
+        .perspective:hover .translateZ{
+            transform:translateZ(200px);   /* 向前走进了200px */
+        }
+        .perspective .rotateX{
+            background-color: grey;
+            transition: all 10s;
+        }
+        .perspective .rotateX:hover{
+            transform: rotateX(360deg);
+        }
+        .perspective .rotateY{
+            background-color:wheat;
+            transition: all 10s;
+        }
+        .perspective .rotateY:hover{
+            transform: rotateY(360deg);
+        }
+        .transform-style{
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .transform-style .front{
+            position:absolute;
+            left: 0;
+            top: 0;
+            background-color: yellow;
+            transform: translateZ(200px);
+        }
+        .transform-style .back{
+            position: absolute;
+            left:0;
+            top:0;
+            background-color:aquamarine;
+        }
+        .transform-style:hover{
+            transform: rotateY(180deg);
+        }
+        .perspective  .scaleZ{
+            background-color: orange;
+        }
+        .perspective  .scaleZ:hover{
+            transform: scaleZ(1.5);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="translate">配合过渡、hover使用。实现元素位移效果</div>
+    <div class="horizontally">
+        <span>
+            子绝父相水平居中案例:让子盒子在父盒子中水平居中(父子元素任意宽度下都能实现)
+            不能使用margin :0,auto;水平居中(只适用标准流)。
+            使用left:50%;
+            top:50%;正方向移动定位父级高度、宽度的一半。
+            margin-left:-父级宽度的1/2px水平居中;margin-top:-父级高度的1/2px垂直居中;或transform:translate(-50%,-50%);反方向位移父级宽度和高度的一半
+        </span>
+    </div>
+    <div class="doubledoor"></div>
+    <img src="../images/hat1.png" alt="">
+    <div class="orign">转换原点位于右上角,根据原点进行旋转</div>
+    <div class="compound">多重转换:向右位移300像素,放大原来的1.5倍,并旋转360度</div>
+    <div class="gradient">
+        <span>是多个颜色逐渐变化的视觉效果,用于设置盒子的背景。
+        工作中常用半透明渐变:transparent,rgba()</span>
+    </div>
+    <div class="scale">实现元素缩放效果,改变盒子大小,超出不占位、缩小空隙部分占位</div>
+    <div class="perspective">
+        <span class="translateZ fl"></span>
+        <div class="rotateX  fl">沿x轴方向旋转,正数向里旋转,负数向外旋转</div>
+        <div class="rotateY  fl">沿y轴方向旋转,正数向左旋转,负数向右旋转</div>
+        <div class="scaleZ fl"></div>
+    </div>
+    <div class="transform-style">
+        <div class="front"></div>
+        <div class="back"></div>
+    </div>
+</body>
+</html>

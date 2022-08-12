@@ -1,0 +1,59 @@
+/* 腾讯响应式布局 */
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 0px;
+}
+.carousel {
+  /*  如视口宽<768,图高度为250
+    如视口宽<992,图高度为400
+    如视口宽>992,图高度为500 */
+}
+.carousel img {
+  height: 100% !important;
+}
+@media (min-width: 992px) {
+  .carousel .item {
+    height: 500px;
+  }
+}
+@media (max-width: 992px) {
+  .carousel .item {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .carousel .item {
+    height: 250px;
+  }
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  font-size: 16px;
+}
+.size {
+  width: 50%;
+  float: right;
+}
+.title {
+  margin-top: 30px;
+  text-align: center;
+}
+.content div {
+  padding-right: 10px;
+}
+.content div a {
+  display: block;
+  height: 200px;
+}
+.content div:nth-child(1) a {
+  background-color: blue;
+}
+.content div:nth-child(2) a {
+  background-color: aquamarine;
+}
+.content div:nth-child(3) a {
+  background-color: greenyellow;
+}
+.content div:nth-child(4) a {
+  background-color: pink;
+}

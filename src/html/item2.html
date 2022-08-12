@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- 文档类型声明,告诉浏览器该网页的html版本 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ie(兼容性差)/edge -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- 宽度=设备宽度:移动端网页的时候要用 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .display{
+            width: 200px;
+            height: 200px;
+            background-color:burlywood;         
+        }
+        .display span:hover{
+            display: none;
+        }
+        .father,.logo{
+            background-color: tomato;
+            height:200px; 
+            width:200px;
+        }
+        .son{
+            background-color: greenyellow;
+            height:100px; 
+            width:100px;
+            margin-top:50px;
+        }
+        li:first-child{/* 选中第1个子元素 */
+            color: red;
+            background-color: aqua;
+        }
+        li:last-child{/* 选中最后1个子元素 */
+            color: red;
+        }
+        li:nth-child(2){/* 选中第2个子元素 */
+            color: red;
+        }
+        li:nth-last-child(2) { /* 选中倒数第2个子元素 */
+            color: red;
+        }
+        .logo::before{
+            content:url(../images/left.png);
+        }
+        .logo::after{
+            content: url(../images/right.png);
+        }
+        /* 相对定位 */
+        .relative{
+            width: 200px;
+            height: 200px;
+            background-color:pink;
+            position:relative;
+            left: 100px;
+            top:100px;
+        }
+        .absolute{
+            width: 200px;
+            height: 200px;
+            background-color:greenyellow;
+            position: absolute;
+            left: 50%;
+            top:50%;
+        }
+        .one{
+            width: 200px;
+            height: 200px;
+            background-color:rgb(147, 47, 255);
+        }
+        .img{
+            width: 522px;
+            height: 500px;
+            background-image: url(../images/web.webp);
+            position:relative;
+             /* 提示用户可以移动 */
+            cursor: move;
+        }
+        .black{
+            /* 如果子级和父级的宽度相同，宽度可以写100% */
+            width: 100%;
+            height: 150px;
+            background-color:rgba(0,0,0,0.5);
+            position: absolute;
+            top:350px;
+        }
+        .radius{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color:skyblue;
+            /* 一个值:表示4个角是相同的 */
+            /* border-radius: 50px; */
+            /* 4值:左上 右上 右下 左下 从左上顺时针转一圈 */
+            border-radius: 50%;
+        }
+        .radius span{
+            display:inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 200px;
+        }
+        button{
+            width: 100px;
+            height: 250px;
+            background-color:orchid;
+            border:2px solid orangered;
+            border-radius: 50px;
+        }
+        .overflow{
+            width: 200px;
+            height:200px;
+            background-color: greenyellow;
+            /* overflow: visible;(默认)溢出部分可见 */
+            /* overflow: hidden; */
+            /* overflow:scroll; */
+            overflow: auto;
+        }
+        .opacity{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            opacity:0.5;
+        }
+        .sprite span:nth-child(1){
+            display: inline-block;
+            width: 157px;
+            height:145px;
+            background-image: url(../images/star.png);
+        }
+        .sprite span:nth-child(2){
+            display: inline-block;
+            width: 157px;
+            height:145px;
+            background-image: url(../images/star.png);
+            background-position: -236px 0;
+        }
+        .sprite span:nth-child(3){
+            display: inline-block;
+            width: 157px;
+            height:145px;
+            background-image: url(../images/star.png);
+            background-position: -472px 0;
+        }
+        .contain{
+            width: 200px;
+            height: 200px;
+            background-image: url(../images/hat3.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .cover{
+            width: 200px;
+            height: 200px;
+            background-image: url(../images/hat3.png);
+            background-size: cover;
+        }
+        .shadow{
+            width: 200px;
+            height: 200px;
+            background-color:aquamarine;
+            box-shadow: 5px -10px 20px 10px grey inset;
+             /*阴影水平位置距离原图向左5px,垂直位置距离原图向上10px,模糊度20px,
+             阴影大小10px,颜色灰色,内阴影*/
+        }
+        .transition{
+            width: 200px;
+            height: 200px;
+            background-color:darkseagreen;
+            /* transition: all 3s;所有设置的过渡属性在3s渐渐变化 */
+            transition: widtn 1s, background-color 5s;
+            /* 鼠标悬停,宽度1s和背景色5s渐渐发生变化 */
+        }
+        .transition:hover{
+            /* 设置过渡属性 */
+            width: 600px;
+            background-color: greenyellow;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/font_icon/iconfont.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="display"><span>不占位隐藏,让某元素本身在屏幕中不可见,如:鼠标:hover之后元素显示</span></div>
+    <div class="father"><div class="son">son</div></div>
+    <ul>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+    <div class="logo">父标签内容</div>
+    <div class="relative">相对于自己原来位置:距离左边的距离100px,距离上边的距离100px
+        <br>原来的位置不会被占用
+        <br>父元素相对定位
+        <!-- <div class="one"> -->
+            <div class="absolute">子元素绝对定位
+                <br>子绝父相
+            </div>
+        <!-- </div> -->
+    </div>
+    <p>先找已经定位的父级,如果这有这样的父级,就以这个父级为参照物进行定位</p>
+    <p>查找父级方式:就近找定位的父级,若逐层查找不到这样的父/爷级,就以浏览器窗口为参照物进行定位</p>
+    <p>有父级,但父级没有定位(静态定位),以浏览器窗口为参照物进行定位</p>
+    <!-- 底部半透明遮罩效果 -->
+    <!-- 定位的元素会脱标(如绝对定位)，脱标后的元素宽高默认由内容撑开 -->
+    <div class="img">
+        <div class="black"></div>
+    </div>
+    <div class="radius"><span>正圆</span></div>
+    <button type="reset">胶囊按钮</button>
+    <div class="overflow">溢出部分显示效果溢出部分:指的是盒子内容部分所超出盒子范围的区域
+        场景:控制内容溢出部分的显示效果,如:显示、隐藏、滚动条...
+        overflow:visble、hidden、scroll、auto;
+        (默认)溢出部分可见、溢出部分隐藏、无论是否溢出,都显示滚动条、根据是否溢出,自动显示或隐藏滚动条
+    </div>
+    <div class="opacity">
+        <div>
+            opacity会让元素整体透明,包括里面的内容,如:文字、子元素等...
+        </div>
+        <img src="../images/up.png" alt="">
+    </div>
+    <div class="sprite">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="contain">包含,将背景图片等比例缩放,直到不会超出盒子的最大</div>
+    <div class="cover">覆盖,将背景图片等比例缩放,直到刚好填满整个盒子没有空白</div>
+    <div class="shadow">阴影水平位置距离原图向左5px,垂直位置距离原图向上10px,模糊度20px,
+        阴影大小10px,颜色灰色,内阴影
+    </div>
+    <div class="transition">鼠标悬停,宽度1s和背景色5s渐渐发生变化</div>
+</body>
+</html>

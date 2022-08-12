@@ -1,0 +1,121 @@
+// out: ../../css/park_css/park_index.css
+//相对路径跳转到上上级../../
+@import url(./base.less);
+@import url(./normalize.less);
+//导入less文件,自动生成导入less文件中的css样式,在该less文件生成的css中
+@html_font_size: 37.5rem; 
+//设备宽度为375px,html字号为375/10=37.5px
+body{
+    background-color: #f0f0f0;
+}
+// 主体内容
+.main{
+    padding-bottom:50./@html_font_size; 
+    //banner
+    .banner{
+        height:160./@html_font_size;
+    }
+    .title{
+        height: 40./@html_font_size;
+        line-height: 40./@html_font_size;
+        padding-left: 15./@html_font_size;
+        h4{
+            font-size: 14./@html_font_size;
+            color: #3c3c3c;
+        }
+    }
+    //活动
+    .item{
+        margin-bottom: 10./@html_font_size;
+        .pic{
+            position: relative;
+            height: 160./@html_font_size; //图片等比缩放高度是父极的100%,a是行内块
+            //收藏图标
+            i{  
+                position: absolute;
+                right:18./@html_font_size;
+                top:12./@html_font_size;
+                font-size: 26./@html_font_size;
+                color: #fff;
+            }
+            // 活动状态
+            .active{
+                position: absolute;
+                top: -4./@html_font_size;
+                left: 15./@html_font_size;
+                width: 68./@html_font_size;
+                height: 29./@html_font_size;
+                background-image: url(../../images/park/images/status_active.png);
+                background-size:cover;
+                font-size: 12./@html_font_size;
+                color: #fff;
+                line-height: 25./@html_font_size; 
+                text-align: center;
+                //灰色图片已截止样式
+                //.active.off {}交集选择器 必须是active类同时应用了off类
+                //配合js使用
+                &.off{
+                    background-image: url(../../images/park/images/status_default.png);
+                }
+            }
+        }
+        .text{
+            padding:10./@html_font_size 15./@html_font_size;
+            background-color: #fff;
+            .top{
+                display: flex;
+                justify-content: space-between;
+                h5{
+                    width: 290./@html_font_size;
+                    font-size: 15./@html_font_size;
+                    font-weight: normal;
+                    color: #3c3c3c
+                }
+                p{
+                    color: #FE6249 ;
+                    font-size: 15./@html_font_size;
+                }
+            }
+            .bottom{
+                display: flex;
+                margin-top: 10./@html_font_size;
+                p{
+                    margin-right: 15./@html_font_size;
+                    font-size: 11./@html_font_size;
+                    color: #B4B4B4;
+                    i{
+                        font-size: 11./@html_font_size;
+                    }
+                }
+            }
+        }
+    }
+}
+// 底部工具栏 
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content:space-around;
+    // align-items: center;
+    height:50./@html_font_size;
+    width: 100%;
+    background-color: #FECA49;
+        a{  
+            padding:8./@html_font_size 0;
+            font-size: 11./@html_font_size;
+            text-align: center;
+            color:#D78B09;
+            line-height:17./@html_font_size;
+            &::before{
+                content:"\e622";
+                font-family: "iconfont" !important;
+                font-size: 24./@html_font_size;
+            }
+            &.current{
+                color: #fff;
+            }
+        }
+
+}

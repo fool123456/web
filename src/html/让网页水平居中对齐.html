@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hat:hover{
+            background-image:url('../images/图层\ 1.png');
+            background-repeat: no-repeat;
+            filter: drop-shadow(10px 10px 5px rgb(118, 118, 118, 0.5));
+        }
+        .hat{
+            position: relative;
+            text-decoration: none;
+            background-image: url('../images/hat2.png');
+            display: inline-block;
+            width:313px;
+            height: 114px;
+            text-align: center;
+            line-height:150px;
+            font-weight: 700;
+            color:black;
+        }
+        .hat span{
+           position: absolute;
+           left:123px;
+           top:-10px;
+           transition: all 3s;
+        }
+        .hat span:hover{
+            transform: scale(3);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <p>如果需要让文本图片水平居中,text-align属性给文本所在标签(文本的父(标签)元素,如body标签)设置</p>
+    <p>请选择你喜欢的帽子</p>
+    <div>
+        <a href="#" class="hat">
+            <span>接盘吧</span>
+        </a>
+        <a href="#" class="hat">
+            <span>接盘吧</span>
+        </a>
+        <a href="#" class="hat">
+            <span>接盘吧</span>
+        </a>
+    </div>
+</body>
+</html>

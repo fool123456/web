@@ -1,0 +1,219 @@
+/* 小兔鲜儿-个人中心样式表 */
+.rabbit_body{
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+.rabbit_body .wrapper{
+    display: flex;
+}
+.rabbit_body .wrapper .aside{
+    width: 227px;
+    margin-right: 18px;
+    min-height: 500px;/* 最小高度,超过最小高度,盒子高度会由内容撑开 */
+    background-color: #fff;
+}
+.rabbit_body .wrapper .main{
+    flex: 1;
+}
+/* 账户概览 */
+.rabbit_body .wrapper .main .overview{
+    display: flex;
+    height: 132px;
+    margin-bottom: 18px;
+    padding: 20px 0;
+    background-color: #fff;
+}
+.rabbit_body .wrapper .main .overview div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    text-align: center;  /* 图和文字居中对齐 */
+}
+.rabbit_body .wrapper .main .overview div:nth-child(1){
+    border-right: 1px solid #f4f4f4;
+}
+.rabbit_body .wrapper .main .overview div a img{
+    width: 25px;
+    margin-bottom: 11px;
+}
+.rabbit_body .wrapper .main .overview div:first-child a:last-child img{
+    width: 18px;
+}
+.rabbit_body .wrapper .main .overview div a p{
+    font-size: 16px;
+}
+.rabbit_body .wrapper .main .overview div a span{
+    font-size: 25px;
+    color: #e05e30;
+}
+/* 公共样式 */
+.pannel{
+    padding: 28px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+.pannel .pannel_title{
+    display: flex;
+    justify-content: space-between;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.pannel .pannel_title h4{
+    font-size: 22px;
+    font-weight: normal;
+}
+.pannel .pannel_title a{
+    font-size: 16px;
+    color: #999;
+}
+.pannel .pannel_title a::after{
+    content:"\e743";
+    font-family: "iconfont" !important; 
+}
+.orders .content li{
+    display: flex;
+    align-items: center;
+    height: 137px;
+    margin-top: -1px; /* 和标题边框灰色1px重叠 */
+    margin-bottom: 20px;
+    border: 1px solid #f4f4f4;
+}
+.orders .content li:last-child{
+    margin-bottom: 0;
+}
+.orders .content li .goods{
+    display: flex;
+    align-items: center;
+    padding: 17px 0 14px 12px;
+    flex: 1;
+}
+.orders .content li .goods .pic{
+    width: 107px;
+    height: 107px;
+}
+.orders .content li .goods .txt{
+    flex: 1;
+    /* 溢出的时候显示省略号
+    因为弹性盒子的尺寸可以被内容撑开,不换行的文字可以撑开这个盒子的尺寸 */
+    width: 0;
+}
+.orders .content li .goods .txt h5{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+}
+.orders .content li .goods .txt p{
+    font-size: 14px;
+    color: #999;
+}
+.orders .content li .goods .txt span{
+    padding:0 9px;
+}
+.orders .content li .status{
+    width: 200px;
+    color: #e05e30;
+}
+.orders .content li .status span:nth-child(2){
+    color: #999;
+}
+.orders .content li .status,
+.orders .content li .pay,
+.orders .content li .action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    font-size: 14px;
+}
+.orders .content li .pay{
+    width: 200px;
+    height: 137px;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
+.orders .content li .pay p:first-child{
+    color: #e05e30;
+}
+.orders .content li .action{
+    width: 180px;
+}
+.orders .content li .action a:first-child{
+    margin-bottom: 10px;
+    width: 100px;
+    height: 30px;
+	background-color: #5eb69c;
+	border-radius: 2px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+}
+/* 侧边栏  */
+.rabbit_body .aside .user_portrait{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    height: 230px;
+}
+.rabbit_body .aside .user_portrait img{
+    width: 85px;
+    border-radius: 50%;
+}
+.rabbit_body .aside .user_portrait h3{
+    margin: 13px 0 11px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.rabbit_body .aside .user_portrait a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 93px;
+	height: 27px;
+	background-image: linear-gradient(264deg, 
+		#e05e2f 0%, 
+		#ea745e 95%); 
+	border-radius: 13px;
+    font-size: 14px;
+    color: #f9f9f9;
+}
+.rabbit_body .aside .user_portrait a::before{
+    margin: 3px;
+    content: ''; /* content属性设置为空,用背景图片进行插入,不然设置不了大小 */
+    /* content:url(../images/rabbit/images/vip_gold.png); */
+    background-image: url(../images/rabbit/images/vip_gold.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+}
+.rabbit_body .aside ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #f4f4f4;
+}
+.rabbit_body .aside ul h5{
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.rabbit_body .aside ul li{
+    /* padding: 14px 0; */
+    font-size: 14px;
+    line-height:36px;
+    color: #666666;
+}
+.rabbit_body .aside ul li:nth-child(2){
+    margin-top: 14px;
+}
+.rabbit_body .aside ul li:last-child{
+    margin-bottom: 14px;
+}
+.rabbit_body .aside ul li:hover{
+    color: #5cb99e;
+    list-style:disc;
+}

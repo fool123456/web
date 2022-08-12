@@ -1,0 +1,6 @@
+/* 制作动画样式 */
+@keyframes move {
+    20%{
+        transform:translateX(20px) translateY(20px) rotate(45deg);
+    }
+}

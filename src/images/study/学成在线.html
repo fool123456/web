@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学成在线</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 页面背景颜色 */
+        body {
+            background-color: #f3f5f7;
+
+        }
+
+        /* 版心宽度公用 */
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* 可以优先用颜色把盒子画出来，最后在填充内容 */
+        .header {
+            height: 42px;
+            /* background-color: pink; */
+            /* 这里margin会与.w的margin层叠冲突 */
+            margin: 30px auto;
+        }
+
+        .logo {
+            float: left;
+            height: 42px;
+            width: 198px;
+            /* background-color: blue; */
+        }
+
+        .nav {
+            float: left;
+            height: 42px;
+            margin-left: 60px;
+            font-size: 17px;
+
+        }
+
+        .nav ul li {
+
+            float: left;
+        }
+
+        .nav ul li a {
+            display: inline-block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            text-decoration: none;
+            color: #030406;
+            font-size: 17px;
+        }
+
+        .nav ul li a:hover {
+
+            border-bottom: 2px solid #01a4fc;
+        }
+
+        .search {
+            float: left;
+            width: 412px;
+            height: 40px;
+            margin-left: 94px;
+
+        }
+
+        .search input {
+            float: left;
+            width: 358px;
+            height: 38px;
+
+            margin-top: 2px;
+            margin-left: 1px;
+            font-size: 12px;
+            border: 2px solid #00a4ff;
+            padding-left: 18px;
+        }
+
+        .search button {
+            float: left;
+            width: 50px;
+            height: 38px;
+            background-image: url(./btn.png);
+            border: 0;
+            margin-top: 2px;
+
+
+        }
+
+        .user {
+            float: left;
+            width: 115px;
+            height: 33px;
+            margin-left: 30px;
+            background-image: url(./user.png);
+            background-repeat: no-repeat;
+            text-indent: 37px;
+            margin-top: 7px;
+            margin-right: 31px;
+
+        }
+
+        /* banner开始 */
+        .banner {
+            height: 421px;
+            background-color: #1c036c;
+        }
+
+        .banner .w {
+            height: 420px;
+            /* background-color: pink; */
+            background-image: url(./big-banner.png);
+        }
+
+        .subnav {
+            float: left;
+            width: 190px;
+            height: 420px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .subnav ul li {
+            height: 44px;
+            line-height: 44px;
+            padding: 0 20px;
+
+        }
+
+        .subnav ul li a {
+            color: #fff;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .subnav ul li a span {
+            float: right;
+        }
+
+        .subnav ul li a:hover {
+            color: #00b4ff;
+        }
+
+        .course {
+            float: right;
+            width: 228px;
+            height: 300px;
+            background-color: #fff;
+            margin-top: 50px;
+        }
+
+        .course h2 {
+            height: 48px;
+            background-color: #9bceea;
+            line-height: 48px;
+            font-size: 18px;
+            text-align: center;
+            color: #fcfeff;
+        }
+
+        .bd {
+            padding: 0 20px;
+
+        }
+
+        .bd ul li h3 {
+            font-size: 16px;
+            color: #4e4e4e;
+        }
+
+        .bd ul li p {
+            font-size: 12px;
+            color: #b7b7b7;
+        }
+
+        .bd ul li {
+            padding: 14px 0;
+            border-bottom: 1px solid #b7b7b7;
+        }
+
+        .course .more {
+            display: block;
+            height: 38px;
+            border: 1px solid #22b0ff;
+            text-decoration: none;
+            line-height: 38px;
+            text-align: center;
+            color: #22b0ff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        /* banner结束 */
+        /* goods开始 */
+        .goods {
+            height: 60px;
+            background-color: #fff;
+            margin-top: 8px;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            line-height: 60px;
+
+        }
+
+        .goods h3 {
+            float: left;
+            margin-left: 30px;
+            font-size: 16px;
+            color: #109fef;
+        }
+
+        .goods ul {
+            float: left;
+            margin-left: 30px;
+        }
+
+        .int {
+            float: right;
+            margin-right: 30px;
+            font-size: 14px;
+            color: #109fef;
+            text-decoration: none;
+        }
+
+
+        .goods ul li {
+            float: left;
+
+        }
+
+        .goods ul li a {
+            padding: 0 30px;
+            font-size: 16px;
+            color: #050505;
+            border-left: 1px solid #ccc;
+            text-decoration: none;
+        }
+
+        /* goods结束 */
+        /* 核心区域开始 */
+        .box {
+            margin-top: 30px;
+        }
+
+        .box-hd {
+            height: 40px;
+        }
+
+        .box-hd h3 {
+            float: left;
+            font-size: 19px;
+            font-weight: 400;
+        }
+
+        .box-hd a {
+            float: right;
+            text-decoration: none;
+            color: #a5a5a5;
+            font-size: 12px;
+            margin-top: 10px;
+            margin-right: 30px;
+        }
+
+        .box-bd ul {
+            width: 1225px;
+        }
+
+        .box-bd ul li {
+            float: left;
+            width: 228px;
+            height: 270px;
+            background-color: #fff;
+            margin-right: 15px;
+            margin-bottom: 15px;
+
+        }
+
+        .box-bd ul li img {
+            width: 100%;
+        }
+
+        .box-bd ul li h4 {
+            margin: 25px 20px 20px 24px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #050505;
+        }
+
+        .box-bd .info {
+            margin: 0 20px 0 24px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .box-bd .info span {
+            color: #ff7c2d;
+        }
+
+        .clear {
+            clear: both
+        }
+
+        /* 第一个盒子结束 */
+        .box .box-hd ul {
+            float: left;
+            margin-left: 281px;
+        }
+
+        .box .box-hd ul li {
+            float: left;
+            margin: 0 35px;
+        }
+
+        .box .box-hd ul a {
+            font-size: 15px;
+            color: #868686;
+        }
+
+        .box .box-hd ul a:hover {
+            color: #00a4ff;
+        }
+
+        .box-bd2 {
+
+            height: 392px;
+            background-color: #f3f5f7
+        }
+
+        .left {
+            float: left;
+            width: 227px;
+            height: 392px;
+            background-color: blue;
+        }
+
+        .right {
+            float: left;
+            width: 957px;
+            height: 100px;
+            background-color: green;
+            margin-left: 15px;
+            margin-bottom: 23px;
+        }
+
+        .box .box-bd2 ul li {
+            float: left;
+            width: 227px;
+            height: 269px;
+            background-color: #fff;
+            margin-left: 16px;
+
+        }
+
+        .box .box-bd2 ul li h4 {
+            margin: 25px 20px 20px 24px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #050505;
+        }
+
+        .box .box-bd2 .info {
+            margin: 0 20px 0 24px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .box .box-bd2 .info span {
+            color: #ff7c2d;
+        }
+
+        /* 第二个盒子结束  第三个复制*/
+        /* 第四个box */
+        .box-bd4 {
+            height: 269px;
+            background-color: #f3f5f7;
+        }
+
+        .box-bd4 ul li {
+            float: left;
+            width: 228px;
+            height: 269px;
+            background-color: #fff;
+            margin-right: 15px;
+        }
+
+        .box-bd4 .last {
+            margin-right: 0;
+        }
+
+        /* 第四部分样式 */
+        .box .box-bd4 ul li h4 {
+            margin: 25px 20px 20px 24px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #050505;
+        }
+
+        .box .box-bd4 .info {
+            margin: 0 20px 0 24px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .box .box-bd4 .info span {
+            color: #ff7c2d;
+        }
+
+        /* 底部样式开始 */
+        .footer {
+            height: 418px;
+            background-color: #fff;
+            margin-top: 40px;
+        }
+
+        .footer .w {
+            padding-top: 33px;
+        }
+
+        .copyright {
+            float: left;
+        }
+
+        .links {
+            float: right;
+        }
+
+        .footer .w .copyright p {
+            margin: 25px 0 16px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .app {
+            display: inline-block;
+            width: 118px;
+            height: 34px;
+            border: 1px solid #00a4ff;
+            line-height: 31px;
+            text-align: center;
+            text-decoration: none;
+            color: #00a4ff;
+
+        }
+
+        .links dl {
+            float: left;
+            margin-left: 100px;
+        }
+
+        .links dl dt {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .links dl dd a {
+            color: #333;
+            font-size: 12px;
+
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header部分 -->
+    <div class="header w">
+        <!-- logo部分 -->
+        <div class="logo"><img src="./logo.png"></div>
+        <!-- 导航栏部分 -->
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+            </ul>
+        </div>
+        <!-- 搜索框以及按钮 -->
+        <div class="search">
+            <input type="text" placeholder="请输入关键词">
+            <button></button>
+        </div>
+        <!-- user部分 -->
+        <div class="user">qq-leishui</div>
+
+    </div>
+    <!-- 以上为haeder部分 -->
+    <!-- banner区域 -->
+    <div class="banner">
+        <!-- 版心背景，内容放里面 -->
+        <div class="w">
+            <!-- 左侧副导航 -->
+            <div class="subnav">
+                <ul>
+                    <li><a href="#">前端开发<span>&gt;</span></a></li>
+                    <li><a href="#">后端开发<span>&gt;</span></a></li>
+                    <li><a href="#">移动开发<span>&gt;</span></a></li>
+                    <li><a href="#">人工只能<span>&gt;</span></a></li>
+                    <li><a href="#">商业预测<span>&gt;</span></a></li>
+                    <li><a href="#">云计算&大数据<span>&gt;</span></a></li>
+                    <li><a href="#">运维&从测试<span>&gt;</span></a></li>
+                    <li><a href="#">UI设计<span>&gt;</span></a></li>
+                    <li><a href="#">产品<span>&gt;</span></a></li>
+                </ul>
+            </div>
+            <!-- 右侧我的课程表 -->
+            <div class="course">
+                <h2>我的课程表</h2>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <h3>继续学习 程序语言设计</h3>
+                            <p>正在学习-使用对象</p>
+                        </li>
+                        <li>
+                            <h3>继续学习 程序语言设计</h3>
+                            <p>正在学习-使用对象</p>
+                        </li>
+                        <li>
+                            <h3>继续学习 程序语言设计</h3>
+                            <p>正在学习-使用对象</p>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">全部课程</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 以上为banner区域 -->
+    <!-- goods部分 -->
+    <div class="goods w">
+        <h3>精品推荐</h3>
+        <ul>
+            <li><a href="#" target="_blank">JQuery</a></li>
+            <li><a href="#" target="_blank">Spark</a></li>
+            <li><a href="#" target="_blank">MySQL</a></li>
+            <li><a href="#" target="_blank">JavaWeb</a></li>
+            <li><a href="#" target="_blank">MySQL</a></li>
+            <li><a href="#" target="_blank">Javaweb</a></li>
+        </ul>
+        <a href="#" class="int" target="_blank">修改兴趣</a>
+    </div>
+    <!-- 以上为goods部分 -->
+    <!-- 核心部分 -->
+    <!-- box第一个 -->
+    <div class="box w">
+        <div class="box-hd">
+            <h3>精品推荐</h3>
+            <a href="#" target="_blank">查看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul>
+                <li><img src="./course01.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course02.png">
+                    <h4>Android 网络图片加载框架详解</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course03.png">
+                    <h4>Angular 2 最新框架+主流技术+项目实战</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course04.png">
+                    <h4>Android Hybrid APP开发实战 H5+原生 ！</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course04.png">
+                    <h4>Android Hybrid APP开发实战 H5+原生 ！</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course01.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course02.png">
+                    <h4>Android 网络图片加载框架详解 </h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course03.png">
+                    <h4>Angular 2 最新框架+主流技术+项目实战</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course04.png">
+                    <h4>Android Hybrid APP开发实战 H5+原生 ！</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <li><img src="./course04.png">
+                    <h4>Android Hybrid APP开发实战 H5+原生 ！</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                    </div>
+                </li>
+                <!-- 清除浮动 -->
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <!-- box第二个 -->
+    <div class="box w boxer">
+        <!-- /* 顶部 */ -->
+        <div class="box-hd">
+            <h3>编程入门</h3>
+            <ul>
+                <li><a href="#">热门</a></li>
+                <li><a href="#">初级</a></li>
+                <li><a href="#">中级</a></li>
+                <li><a href="#">高级</a></li>
+            </ul>
+            <a href="#">查看全部</a>
+        </div>
+        <!-- /* 下半部 */ -->
+        <div class="box-bd2 w">
+            <div class="left"><img src="./basic-pic.jpg"></div>
+            <div class="right"><img src="./basic-banner.png"></div>
+            <ul>
+                <li><img src="./course05.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course06.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course07.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course08.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- box第二个结束 -->
+    <div class="box w boxer">
+        <!-- /* 顶部 */ -->
+        <div class="box-hd">
+            <h3>编程入门</h3>
+            <ul>
+                <li><a href="#">热门</a></li>
+                <li><a href="#">初级</a></li>
+                <li><a href="#">中级</a></li>
+                <li><a href="#">高级</a></li>
+            </ul>
+            <a href="#">查看全部</a>
+        </div>
+        <!-- /* 下半部 */ -->
+        <div class="box-bd2 w">
+            <div class="left"><img src="./data-pic.png"></div>
+            <div class="right"><img src="./data-banner.png"></div>
+            <ul>
+                <li><img src="./course06.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course05.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course08.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course07.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- box第三个结束 -->
+    <!-- 第四个开始/共5个 -->
+    <div class="box w boxer">
+        <!-- /* 顶部 */ -->
+        <div class="box-hd">
+            <h3>编程入门</h3>
+            <ul>
+                <li><a href="#">热门</a></li>
+                <li><a href="#">初级</a></li>
+                <li><a href="#">中级</a></li>
+                <li><a href="#">高级</a></li>
+            </ul>
+            <a href="#">查看全部</a>
+        </div>
+        <!-- 下半部 -->
+        <div class="box-bd4 w">
+            <ul>
+                <li><img src="./course05.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course08.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course07.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course08.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li class="last"><img src="./course06.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 第四部分结束 -->
+    <!-- 第五部分开始 -->
+    <div class="box w boxer">
+        <!-- /* 顶部 */ -->
+        <div class="box-hd">
+            <h3>编程入门</h3>
+            <ul>
+                <li><a href="#">热门</a></li>
+                <li><a href="#">初级</a></li>
+                <li><a href="#">中级</a></li>
+                <li><a href="#">高级</a></li>
+            </ul>
+            <a href="#">查看全部</a>
+        </div>
+        <!-- 下半部 -->
+        <div class="box-bd4 w">
+            <ul>
+                <li><img src="./course08.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course07.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course08.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li><img src="./course06.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+                <li class="last"><img src="./course05.png">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <div class="info">
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 第五部分结束 -->
+    <!-- 底部开始 -->
+
+    <!-- 底部结束 -->
+    <div class="footer">
+        <div class="w">
+            <div class="copyright">
+                <img src="./logo.png" alt="">
+                <p>学成在线致力于普及中国最好的教育它与中国一流大学和机构合作提供在线课程。<br>
+                    © 2017年XTCG Inc.保留所有权利。-沪ICP备15025210号</p>
+                <a href="" class="app">下载APP</a>
+            </div>
+            <!-- 右侧 -->
+            <div class="links">
+                <dl>
+                    <dt>关于学成网</dt>
+                    <dd><a href="#">关于</a></dd>
+                    <dd><a href="#">管理团队</a></dd>
+                    <dd><a href="#">工作机会</a></dd>
+                    <dd><a href="#">客户服务</a></dd>
+                    <dd><a href="#">帮助</a></dd>
+                </dl>
+                <dl>
+                    <dt>新手指南</dt>
+                    <dd><a href="#">如何注册</a></dd>
+                    <dd><a href="#">如何选择</a></dd>
+                    <dd><a href="#">如何拿到毕业证</a></dd>
+                    <dd><a href="#">学分是什么</a></dd>
+                    <dd><a href="#">考试未通过怎么办</a></dd>
+                </dl>
+                <dl>
+                    <dt>合作伙伴</dt>
+                    <dd><a href="#">合作机构</a></dd>
+                    <dd><a href="#">合作导师</a></dd>
+                </dl>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

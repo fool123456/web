@@ -1,0 +1,204 @@
+/* 放index页面的样式表*/
+.banner{
+    height: 500px;
+    background-color: #f5f5f5;
+}
+.banner .wrapper{
+    position: relative;/* 子绝父相 */
+    height: 500px;
+    background-color: pink;
+}
+.banner .aside{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 500px;
+    background-color:rgba(0,0,0,0.8);
+}
+.banner .aside li{
+    height: 50px;
+    line-height: 50px;
+}
+.banner .aside li a{
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    padding-right: 19px;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+.banner .aside li a span{
+    margin-left:15px;
+    font-size: 14px;
+}
+.banner .aside li a:hover{
+    background-color: #27ba9b;
+}
+/* a里面的最后的位置添加箭头 */
+.banner .aside li a::after{
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    content: '';
+    width: 6px;
+    height: 11px;
+    background-image: url(../images/rabbit/images/sprites.png);
+    background-position: -80px -110px;
+}
+/* 箭头 */
+.banner  .prev,.next{
+    position: absolute;
+    top: 228px;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0.2);
+    background-image: url(../images/rabbit/images/sprites.png);
+    border-radius: 50%;
+}
+/* 背景图位置负责2件事:改变箭头在盒子里面的位置;改变精灵图的位置 */
+/* 导致在精灵图中测量的尺寸不准确 */
+/* 解决方案有2种:
+    1.书写背景图位置属性,借助谷歌的调试工具调试具体位置数值
+    2.书写标签的时候,a负责盒子,里面再添加1个span负责箭头 */
+.banner .prev{
+    left: 260px;
+    background-position: 14px -60px;
+}
+.banner .wrapper .next{
+    right: 10px;
+    background-position:-23px -60px;
+}
+/* 圆点 */
+.banner ol{
+    position: absolute;/*wrapper相对定位 */
+    left: 680px;
+    bottom: 30px;
+    width: 200px;
+    height: 10px;
+}
+.banner ol li{
+    float: left;
+    margin-right: 24px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    }
+.banner .wrapper ol .current{
+    background-color: #fff;
+}
+/* 新鲜好物  */
+.goods .hd{
+    height: 114px;
+    line-height: 114px;
+}
+.goods .hd h2{
+    float: left;
+    height: 114px;
+    font-size: 29px;
+    font-weight: normal;
+}
+.goods .hd h2 span{
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+.goods .hd a,
+.fresh .hd .more{       /* 相同的样式可以使用并集选择器,避免写重复代码 */
+    float: right;
+    font-size: 16px;
+    color: #999;
+}
+.goods .hd a::after,
+.fresh .hd .more::after{
+    content: '>';
+    margin-left: 13px;
+}
+.goods .hd a:hover,
+.fresh .hd .more:hover{
+    color: #27ba9b;
+}
+.goods .bd li{
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    width: 304px;
+    height: 405px;
+    background-color: #f0f9f4;
+    text-align: center;
+}
+.goods .bd li:nth-child(4n){
+    margin-right: 0;
+}
+.goods .bd li img{
+    /* img具有行内块的特点,设置宽会等比例缩放,不用写高度 */
+    width: 304px;
+}
+.goods .bd li h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: normal;
+}
+.goods .bd li span:nth-child(3){
+    color: #9a2e1f;
+    font-size: 17px;
+}
+.goods .bd li span:nth-child(4){
+    color: #9a2e1f;
+    font-size: 23px;
+}
+.goods .bd li b{
+    position: absolute;
+    left: 17px;
+    top: 18px;
+    width: 28px;
+    height: 51px;
+    border: 1px solid #27ba9b;
+    border-radius: 2px;
+    font:normal 18px/24px "Microsoft Yahei";
+    color: #27ba9b;
+}
+/* 生鲜 */
+.fresh .hd{
+    height: 96px;
+    line-height: 96px;
+}
+.fresh .hd h2{
+    float: left;
+    font-size: 29px;
+    font-weight: normal;
+}
+.fresh .hd ul{
+    float: right;
+    margin-right: 65px;
+}
+.fresh .hd ul li{
+    float: left;
+}
+.fresh .hd ul li a{
+    padding: 2px 7px;
+    margin-left: 6px;
+}
+.fresh .hd ul li a:hover{
+    background-color: #27ba9b;
+    color: #fff;
+}
+.fresh .bd .left{
+    float: left;
+    width: 240px;
+    height: 610px;
+    background-color: pink;
+}
+.fresh .bd .left img{
+    width: 240px;
+}
+.fresh .bd .right{
+    float: left;
+    width: 1000px;
+    height: 610px;
+    background-color: green;
+}

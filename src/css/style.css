@@ -1,0 +1,128 @@
+p{
+    color: brown;
+    color: chartreuse;
+    /* 层叠性,后面的覆盖前面的属性 */
+}
+
+.blue{
+    color: blue;
+}
+
+#id{
+     color: rgb(0, 255, 255);
+}
+ /* 去除网页中所有标签默认的内外边距 */
+*{
+    margin: 0 auto;/*像素为0可以省略单位,版心居中 */
+    padding: 0;
+}  
+/* 字体样式 */
+.font{
+    /* 字体大小 */
+    font-size: 40px;
+    /* font-weight: normal(正常)、bold(加粗)、100-900(整百数字);不是所有字体都提供了9种粗细,因此部分取值页面中无变化。实际开发中以正常、加粗使用最多 */
+    font-weight: 700;
+    /* 字体默认是正常不倾斜 */
+    font-style: italic;
+    /* 如果用户电脑没有安装微软雅黑，就按黑体显示文字
+    如果电脑没有安装黑体，就按任意一种非衬线字体系列显示 */
+    font-family:微软雅黑,黑体, sans-serif;
+}
+
+#font1{
+    /* font相关属性的连写 */
+    /* 只能省略前2个属性值,后2个属性值必须写,否则不生效。如果省略了相当于设置了默认值 */
+    font: italic 700 40px 宋体;
+    font-style: normal;
+    /* 如果需要同时设置单独和连写形式,要么把单独的样式写在连写的下面 */
+}
+.text{
+    /* 设置首行缩进两个字符 */
+    /* 默认字号16px */
+    /* text-indent: 32px; */
+    /* 默认1个字符16像素,局限性：字号一旦修改缩进也会进行修改 */
+    text-indent: 2em;
+}
+.hang_gao{
+    /* line-height: 50px; */
+    /* 自己字号的3倍 */
+    line-height: 3;
+    /* font: style weight size/line-height family;顺序不能更改 */
+    font: italic 700 16px/80px 楷体;
+}
+.zi{
+    float: left;
+    padding:4px;
+}
+/* 找到div的孙子p设置文字颜色 ，作用于所有后代*/
+div p{
+    color: violet;
+    /* 父标签名 子标签名 {css属性;} */
+}
+div>span{
+    background-color: tomato;
+    /* 只能作用于儿子 */
+}
+div>h1,
+div>h2,
+div>h3{/* 并集选择器中的每组选择器通常一行写一个,提高代码的可读性 */
+    background-color:yellow;
+}
+p.jiaoji{
+    background-color: navajowhite;
+}
+.weilei:hover{
+    background-color:khaki;
+    color:white;
+    height: 40px;
+    padding:4px;
+    box-sizing:border-box;
+    float: left;
+}
+.beijing{
+    /* background-color:rgba(127,255,212,0.3);
+    background-image: url(./images/u=2532708364\,1297389717&fm=253&fmt=auto&app=138&f=JPEG.webp) ;
+    background-repeat:no-repeat;
+    background-position:right bottom; */
+    background:rgba(127,255,212,0.3) 
+                url(../images/web.webp) 
+                no-repeat 
+                right bottom;
+}
+.item>a{
+    text-decoration: none;
+    font-family: 楷体;
+    height: 40px;
+    background-color:plum;
+    border-right:3px solid red;
+    padding:4px;
+    box-sizing:border-box;
+    float: left;
+}
+/* 纸箱子,填充泡沫。 */
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: darkseagreen;
+    /* 边框=纸箱子粗细 。线条样式 颜色,不分先后顺序  */
+    /* border: 10px dotted black; */
+    border-top: 10px dashed black;
+    border-bottom: 10px dashed black;
+    /* 内边距=填充泡沫:出现在内容和盒子边缘之间*/
+    padding: 20px;
+    /* 外边距:两个盒子之间,盒子的外面*/
+    margin: 50px;
+}
+.clearfix::after{											
+    content:'';
+    display:block;
+    clear: both;
+    /* 补充代码:在网页中看不到伪元素 */
+    height:0;
+    visibility:hidden;
+}
+/* 通过重写iconfont类层叠,调整整字体图标大小和颜色 */
+.iconfont{
+    font-size: 50px;
+    color: skyblue;
+}

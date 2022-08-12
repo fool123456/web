@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="学历低,找不到工作,被人看不起,只配干销售工厂服务员">
+    <meta name="keywords" content="土肥圆,丑笨懒穷">
+    <link rel="stylesheet" href="./css/font_icon/iconfont.css">
+    <link rel="stylesheet" href="./css/animation.css"><!-- 制作动画样式  -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="shortcut icon" href="old.ico" type="image/x-icon">
+    <style>
+        body{
+            background-image: url(./images/backgroundA.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .wrapper{
+            width: 1340px;
+            margin: 0 auto;
+        }
+        .nav{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            background-color:rgba(199, 21, 134, 0.318);
+            box-shadow: 0px 5px 6px 0px rgba(118, 118, 118, 0.5);
+        }
+        .nav ul {
+            display: flex;
+        }
+        .nav ul li a{
+            padding:0 9px;
+            border-left:1px solid #fff;
+            font:700 32px/50px 楷体;
+            color: #fff;
+            text-align: center;
+        }
+        .nav li:first-child a,
+        .nav li:last-child a{
+            border-left:0;
+        }
+
+        .nav ul li:hover{
+            background-color: purple;
+        }
+        .nav li .hat,
+        .nav li .hat:hover{
+            position:absolute;
+            right: -100px;
+            top:80px;
+            padding: 20px;
+            height: 100px;
+            width: 250px;
+            background-image: url(./images/图层\ 2.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* 给图片设置翻转 transform:rotateX(翻转角度); */
+            transform:rotate(45deg);
+            /* 使用CSS将HTML的图片添加阴影（不规则图片也适用） */
+            /* 如果用阴影box-shadow，展现的阴影是方形的 */
+            /* filter:drop-shadow(横坐标 纵坐标 羽化值 颜色); */
+            filter: drop-shadow(10px 10px 5px rgb(118, 118, 118, 0.5));
+            transition: all 2s;
+        }
+        .nav li .hat{
+            animation: move 3s linear infinite;
+        }
+        .nav li .hat:hover{
+            background-image: url(./images/图层\ 1.png);
+            font-size: 10px;
+            animation-play-state:paused;
+        }
+        .nav .right a{
+            display: flex;
+            align-content: center;
+            line-height: 50px;
+        }
+        .icon-help{
+            /* 通过重写iconfont类选择器层叠,调整整字体图标大小和颜色 */
+            font-size: 32px;
+            color: purple;
+        }
+        .markdown{
+            margin-top: 20px;           
+        }
+        .markdown .wrapper{
+            display: flex;
+        }
+        .markdown .wrapper .h5c3,
+        .markdown .wrapper .javascript,
+        .markdown .wrapper .road,
+        .markdown .wrapper .case_page{
+            margin-right: 50px;
+            width: 250px;
+            overflow: hidden;
+        }
+        .markdown .wrapper .road,
+        .markdown .wrapper .case_page{
+            width: 200px;
+        }
+        .markdown .wrapper .h5c3 h5,
+        .markdown .wrapper .javascript h5,
+        .markdown .wrapper .road h5,
+        .markdown .wrapper .case_page h5{
+            height: 50px;
+            background-color:aquamarine;
+            font-size: 20px;
+            color: #fff;
+            line-height:50px;
+            text-align: center;
+        }
+        .markdown .wrapper .h5c3 .content a,
+        .markdown .wrapper .javascript .content a,
+        .markdown .wrapper .road .content a,
+        .markdown .wrapper .case_page .content a{
+            display: block;
+            height: 24px;
+            white-space: nowrap; 
+            border-bottom:1px dashed grey;
+            transition:transform 5s;
+        }
+        .markdown .wrapper .h5c3 .content a:hover,
+        .markdown .wrapper .javascript .content a:hover,
+        .markdown .wrapper .road .content a:hover,
+        .markdown .wrapper .case_page .content a:hover{
+            transform: translateX(-100%);
+            color: violet;
+        }
+        .markdown .wrapper .javascript h5{
+            background-color:greenyellow;
+        }
+        .markdown .wrapper .road h5{
+            background-color:tomato;
+        }
+        .markdown .wrapper .case_page h5{
+            background-color:lightslategray;
+        }
+    </style>
+    <title>老女人</title>
+</head>
+<body>
+    <div class="nav wrapper"><!-- 导航栏 -->
+        <!-- 左 -->
+        <div class="left">
+            <ul>
+                <li><a href="./html/item2.html" target="_blank">项目2</a></li>
+                <li><a href="./html/css过渡转换.html" target="_blank">css过渡转换</a></li>
+                <li><a href="./html/css动画.html" target="_blank">css动画</a></li>
+                <li><a href="./html/float.html" target="_blank">浮动</a></li>
+                <li><a href="./html/stupid.html" target="_blank">初学项目</a></li>
+                <li><a href="./html/study.html" target="_blank">学成在线</a></li>
+                <li><a href="./html/rabbit_index.html" target="_blank">小兔鲜儿</a></li>
+                <li><a href="./html/小案例.html" target="_blank">案例</a></li>
+                <li><a href="./html/rabbit_order.html" target="_blank">移动端网页</a></li>
+                <li>
+                    <a href="./html/让网页水平居中对齐.html" target="_blank" class="hat">
+                        <span>接盘项目</span>
+                    </a>
+                </li>
+            </ul>
+        </div>       
+        <!-- 右 -->
+        <div class="right">
+                <a href="#">
+                    <span class="iconfont icon-help"></span>
+                    <span>帮助</span>
+                    <span class="iconfont icon-arrow-down"></span>
+                </a>
+        </div>
+    </div>
+    <div class="markdown"><!-- 笔记 -->
+        <div class="wrapper">
+            <div class="h5c3">
+                <h5>html+css笔记</h5>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <a href="../code/html/markdown/HTMLCSS/01/【HTML基础】.html" target="_blank">01【HTML基础】</a>
+                        </li>
+                        <li>
+                            <a href="./html/markdown/HTMLCSS/02/【CSS简介、基础选择器、字体属性、文本属性、引入方式】.html" target="_blank">02【CSS简介、基础选择器、字体属性、文本属性、引入方式】</a>
+                        </li>
+                        <li><a href="./html/markdown/HTMLCSS/03/【CSS复合选择器、元素显示模式、背景】.html"  target="_blank">03【CSS复合选择器、元素显示模式、背景】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/04/【Emmet语法】.html"  target="_blank">04【Emmet语法】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/05/【CSS三大特性】.html"  target="_blank">05【CSS三大特性】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/06/【CSS盒子模型】.html" target="_blank">06【CSS盒子模型】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/07/【圆角边框、盒子阴影、文字阴影】.html" target="_blank">07【圆角边框、盒子阴影、文字阴影】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/08/【CSS浮动】.html" target="_blank">08【CSS浮动】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/09/【学成在线案例】.html" target="_blank">09【学成在线案例】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/10/【CSS定位】.html" target="_blank">10【CSS定位】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/11/【CSS精灵图、字体图标、鼠标样式、溢出省略号、用户界面技巧】.html" target="_blank">11【CSS精灵图、字体图标、鼠标样式、溢出省略号、用户界面技巧】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/12/【布局技巧：margin负值、文字围绕浮动、行内快、CSS三角、CSS初始化】.html" target="_blank">12【布局技巧：margin负值、文字围绕浮动、行内快、CSS三角、CSS初始化】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/13/【HTML5&CSS3提高】.html" target="_blank">13【HTML5&CSS3提高】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/14/【PC端品优购项目】.html" target="_blank">14【PC端品优购项目】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/15/【CSS3提高：2D转换、动画、3D转换、浏览器私有前缀】.html" target="_blank">15【CSS3提高：2D转换、动画、3D转换、浏览器私有前缀</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/16/【移动Web开发之流式布局】.html" target="_blank">16【移动Web开发之流式布局】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/17/【移动Web开发之flex布局】.html" target="_blank">17【移动Web开发之flex布局】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/18/【移动Web开发之rem适配布局】.html" target="_blank">18【移动Web开发之rem适配布局】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/19/【移动Web开发之综合案例】.html" target="_blank">19【移动Web开发之综合案例】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/20/【移动端Web开发之响应式布局】.html" target="_blank">20【移动端Web开发之响应式布局】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/21/【移动端Web开发之vw和vh布局】.html" target="_blank">21【移动端Web开发之vw和vh布局】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/22/【移动Web开发之grid布局】.html" target="_blank">22【移动Web开发之grid布局】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/23/【移动端Web开发进阶】.html" target="_blank">23【移动端Web开发进阶】</a></li>
+                        <li><a href="./html/markdown/HTMLCSS/24/【补充】.html" target="_blank">24【补充】</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="javascript">
+                <h5>javascript</h5>
+                <div class="content">
+                    <ul>
+                        <li><a href="./html/markdown/JavaScript/01/【JS语法与变量】.html">01【JS语法与变量】</a></li>
+                        <li><a href="./html/markdown/JavaScript/02/【JS基本数据类型】.html">02【JS基本数据类型】</a></li>
+                        <li><a href="./html/markdown/JavaScript/03/【JS表达式与操作符】.html">03【JS表达式与操作符】</a></li>
+                        <li><a href="./html/markdown/JavaScript/04/【JS流程控制】.html">04【JS流程控制】</a></li>
+                        <li><a href="./html/markdown/JavaScript/05/【JS数组】.html">05【JS数组】</a></li>
+                        <li><a href="./html/markdown/JavaScript/06/【JS函数】.html">06【JS函数】</a></li>
+                        <li><a href="./html/markdown/JavaScript/07/【DOM】.html">07【DOM】</a></li>
+                        <li><a href="./html/markdown/JavaScript/08/【BOM】.html">08【BOM】</a></li>
+                        <li><a href="./html/markdown/JavaScript/09/【面向对象】.html">09【面向对象】</a></li>
+                        <li><a href="./html/markdown/JavaScript/10/【正则表达式】.html">10【正则表达式】</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="road">
+                <h5>学习路线</h5>
+                <div class="content">
+                    <ul>
+                        <li><a href="./html/markdown/study_road/前端学习路线.html">前端学习路线</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="case_page">
+                <h5>网页案例</h5>
+                <div class="content">
+                    <ul>
+                        <li><a href="./html/park.html">移动端游乐园</a></li>
+                        <li><a href="./html/m_bilibili.html">移动端b站</a></li>                        
+                        <li><a href="./html/boss.html">移动端boss</a></li>                        
+                        <li><a href="./html/响应式布局.html">腾讯响应式布局</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

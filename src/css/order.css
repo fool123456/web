@@ -1,0 +1,213 @@
+/* 小兔鲜儿移动端,确认订单样式 */
+body{
+    background-color: #f7f7f8;
+}
+/* 公共样式 */
+.red{
+    color: #cf4444;
+}
+.pannel{
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;  
+}
+/* 主体内容 */
+.main{
+    /* 80px:为了内容不被底部区域盖住 */
+    padding:12px 11px 80px;
+}
+.main .user_msg{
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 11px;
+}
+.main .user_msg .location{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-image:linear-gradient(90deg,
+        #6fc2aa 5%,
+        #54b196 100%);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+.main .user_msg .user{
+    flex: 1;
+}
+.main .user_msg .user .top{
+    display: flex;
+    line-height: 12px;
+}
+.main .user_msg .user .top h5{
+    /* 防止名字过长显示不全 */
+    width: 55px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.main .user_msg .user .top p{
+    font-size: 12px;
+}
+.main .user_msg .user .bottom{
+    margin-top:5px;
+    font-size: 12px;
+}
+.main .user_msg .more{
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    color: #808080;
+}
+/* 商品信息 */
+.main .goods_msg {
+    display: flex;
+    padding: 11px 0 11px 11px;
+    border-radius: 2px;
+}
+.main .goods_msg .pic{
+    width: 85px;
+    height: 85px;
+    /* 给父级添加大小,父级里面的图片大小也能生效 */
+    /* base.css里面的img标签加了width:100%;宽度和父元素一样大,高度等比例缩放 */
+    margin-right: 10px;
+}
+.main .goods_msg .info{
+    flex: 1;
+}
+.main .goods_msg .info h5{
+    height: 38px;
+    font-size: 13px;
+    font-weight: normal;
+    overflow: hidden;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    text-overflow: ellipsis;
+    color:#262626;
+}
+.main .goods_msg .info p{
+    margin: 5px 0;
+    height: 20px;
+}
+.main .goods_msg .info p span{
+    margin-right: 3px;
+    padding: 2px;
+    background-color: #f7f7f8;
+    font-size: 12px;
+    color: #8888;
+}
+.main .goods_msg .info .price span::before{
+    content: "\e63f";
+    font-family: "iconfont" !important;
+    font-size: 12px;
+}
+.main .goods_msg .info .price span:nth-child(2){
+    margin-left: 5px;
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+}
+.main .goods_msg .count{
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 44px;
+}
+.main .goods_msg .count::before{
+    content:"\e747";
+    font-family: "iconfont" !important; 
+}
+.main .other,
+.main .total{
+    padding: 15px;
+}
+.main .other div,
+.main .total ul li{    /*other里全部div设置弹性布局 */
+    display: flex;
+    margin-bottom: 30px;
+}
+.main .other div:last-child,
+.main .total ul li:last-child{
+    margin-bottom: 0;
+}
+/* 找到第1个和第3个div设置主轴对齐方式 */
+.main .other div:nth-child(2n+1),
+.main .total ul li{
+    justify-content: space-between;
+}
+.main .other div:nth-child(2) h5{
+    margin-right: 20px;
+}
+.main .other div h5,
+.main .other div p,
+.main .total ul li i,
+.main .total ul li h5{
+    font-size: 13px;
+    font-weight: normal;
+    color: #262626;
+}
+.main .other div:nth-child(2) p{
+    font-size: 12px;
+    color: #989898;
+    line-height: 21px;
+}
+.main .other div:nth-child(3) p::after{
+    content:"\e743";
+    margin-left: 4px;
+    font-family: "iconfont" !important; 
+    font-size: 13px;
+}
+.main .total ul li i::before{
+    content: "\e63f";
+    font-family: "iconfont" !important;
+    font-size: 16px;
+}
+.main .total ul li:nth-child(3) i{
+    color: #cf4444;
+}
+.main .total ul li:nth-child(3) i::before{
+    content: "-\e63f";
+}
+/* 固定定位会脱标,划到最底下会被固定定位的内容压住 ,
+padding-bottom>=固定定位高度*/
+/* 底部支付 */
+.pay{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between; /* 主轴对齐方式 */
+    align-items: center;            /*侧轴对齐方式 */
+    height: 80px;
+    width: 100%;
+    padding: 0 11px;
+    background-color: #fff;
+    border-top: 1px solid #ededed;
+}
+.pay .left{
+    font-size: 12px;
+}
+.pay .left i{
+    font-size: 20px;
+}
+.pay .left i::before{
+    content: "\e63f";
+    font-family: "iconfont" !important;
+    font-size: 16px;
+}
+.pay .right a{
+    display: block;
+    height: 35px;
+    width: 90px;
+    background-image:linear-gradient(90deg,
+        #6fc2aa 5%,
+        #54b196 100%);
+    border: radius 3px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 13px;
+    color: #fff;
+}
